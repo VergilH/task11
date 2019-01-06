@@ -26,7 +26,9 @@ p {
 	margin: 0;
 }
 
-a 
+a {
+	color: $white;
+}
 
 header {
 	padding: 28px 30px 0 30px;
@@ -51,17 +53,39 @@ header {
 
 main {
 	width: $width;
-	height: $height + 312px;
 	background-color: $grey;
-
+	input {
+		margin: 15px 0 0;
+		border: none;
+		width: $width;
+		height: 100px;
+		&[type="text"] ::brfore {
+			content: "\a0";
+			background-image: url(images/phone.png);
+		}
+		&[type="password"] ::brfore {
+			content: "\a0";
+			background-image: url(images/lock.png);
+		}
+	}
 	button {
+		margin-top: 70px;
 		width: $width;
 		height: $height + 12px;
+		border: none;
 		background-color: $blue;
+		&button:hover {
+			color: $white;
+			background-color: $blue;
+		}
 	}
 }
 
 footer {
 	float: $right;
+  	margin: 22px 32px 0 0;
 	color: $blue;
+	a {
+		color: $blue;
+	}
 }
